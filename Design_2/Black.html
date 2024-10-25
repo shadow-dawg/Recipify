@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make-A-Meal</title>
+    <link rel="stylesheet" href="Black.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Step 1: Add Ingredients -->
+        <div class="step">
+            <div class="step-number">1</div>
+            <div class="step-content">
+                <h2>Add the ingredients you have at home.</h2>
+                <p>You can choose an ingredient from the list or from your saved inventory.</p>
+                <p class="instruction">Remember: if an ingredient is not available in the default list, simply type its name in the search bar and add it.</p>
+                <div class="ingredients" id="ingredientsContainer">
+                    <div class="ingredient">Cheese <span class="remove" onclick="removeIngredient(this)">✕</span></div>
+                    <div class="ingredient">Bread <span class="remove" onclick="removeIngredient(this)">✕</span></div>
+                    <div class="ingredient">Avocado <span class="remove" onclick="removeIngredient(this)">✕</span></div>
+                    <div class="ingredient">Carrot <span class="remove" onclick="removeIngredient(this)">✕</span></div>
+                    <div class="ingredient">Butter <span class="remove" onclick="removeIngredient(this)">✕</span></div>
+                    <div class="ingredient">Pepper <span class="remove" onclick="removeIngredient(this)">✕</span></div>
+                    <div class="ingredient">Banana <span class="remove" onclick="removeIngredient(this)">✕</span></div>
+                </div>
+                <input type="text" placeholder="Search or add Ingredients" class="ingredient-search" id="ingredientInput" onkeyup="addIngredient(event)">
+            </div>
+        </div>
+
+        <!-- Step 2: Choose Food -->
+        <div class="step">
+            <div class="step-number">2</div>
+            <div class="step-content">
+                <h2>Choose what food you want to cook.</h2>
+                <p>You can choose Breakfast, Lunch, Snack, or Dinner.</p>
+                <p>PantryChef will then recommend recipes that are suitable for the meal you selected.</p>
+                <select class="meal-select">
+                    <option value="breakfast">Have breakfast</option>
+                    <option value="lunch">Have lunch</option>
+                    <option value="snack">Have a snack</option>
+                    <option value="dinner">Have dinner</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Step 3: Choose Kitchen Equipment -->
+        <div class="step">
+            <div class="step-number">3</div>
+            <div class="step-content">
+                <h2>Choose the kitchen equipment you have.</h2>
+                <p>Select kitchen equipment that you have or want to use.</p>
+                <p>This will prevent PantryChef from recommending recipes using equipment that you don't have or don't want to use.</p>
+                <div class="equipment-list">
+                    <label class="switch">
+                        <input type="checkbox"> Stove
+                        <span class="slider"></span>
+                    </label>
+                    <label class="switch">
+                        <input type="checkbox"> Oven
+                        <span class="slider"></span>
+                    </label>
+                    <label class="switch">
+                        <input type="checkbox"> Microwave
+                        <span class="slider"></span>
+                    </label>
+                    <label class="switch">
+                        <input type="checkbox"> Air Grill
+                        <span class="slider"></span>
+                    </label>
+                    <label class="switch">
+                        <input type="checkbox"> Sous Vide Machine
+                        <span class="slider"></span>
+                    </label>
+                    <label class="switch">
+                        <input type="checkbox" checked> Blender
+                        <span class="slider"></span>
+                    </label>
+                    <label class="switch">
+                        <input type="checkbox"> Food Processor
+                        <span class="slider"></span>
+                    </label>
+                    <label class="switch">
+                        <input type="checkbox"> BBQ Grill
+                        <span class="slider"></span>
+                    </label>
+                    <label class="switch">
+                        <input type="checkbox"> Slow Roast
+                        <span class="slider"></span>
+                    </label>
+                    <label class="switch">
+                        <input type="checkbox"> Pressure Cooker
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 4: Choose Time -->
+        <div class="step">
+            <div class="step-number">4</div>
+            <div class="step-content">
+                <h2>Choose how much time you have.</h2>
+                <p>Choose 5 minutes if you’re in a hurry or longer if you have time.</p>
+                <p>This will prevent PantryChef from recommending recipes that take too long to prepare.</p>
+                <div class="time-slider">
+                    <input type="range" min="5" max="120" value="5">
+                    <span>⏰ 5 minutes</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="Black.js"></script>
+</body>
+</html>
